@@ -36,6 +36,11 @@ html,body{
     display: none;
 }
 
+.table-card{
+    max-height: 60vh;
+    overflow: auto;
+}
+
 @media(max-width: 574px) {
     .main-card{
         width: 90vw;
@@ -43,6 +48,8 @@ html,body{
 
     .table-card{
         width: 90vw;
+        max-height: 60vh;
+        overflow: auto;
     }
 
     .table-card table td{
