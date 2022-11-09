@@ -1,0 +1,51 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-card{
+    width: 50vw;
+}
+
+.main-card .card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-card .card-body label{
+    width: 100%;
+}
+
+.main-card .card-body .btn-group{
+    width: 100%;
+}
+
+#err-msg{
+    display: none;
+}
+
+@media(max-width: 574px) {
+    .main-card{
+        width: 90vw;
+    }
+
+    .table-card{
+        width: 90vw;
+    }
+
+    .table-card table td{
+        max-width: 24vw;
+    }
+}
