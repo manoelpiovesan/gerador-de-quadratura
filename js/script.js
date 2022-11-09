@@ -3,7 +3,7 @@ document.querySelector('#btn-calcular').addEventListener('click', ()=>{
 })
 
 function Quadratura(){
-
+    document.querySelector('#table-data-body').innerHTML = ''
     var n = Math.floor(document.querySelector('#ordem').value)
 
     if(n % 2 != 0){
