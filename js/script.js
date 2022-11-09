@@ -15,8 +15,15 @@ function Quadratura(){
 
 
     var m = parseInt((n + 1)/2);
-    var mi = []
+    var mi;
     var w = []
+
+    var miPos = []
+    var miNeg = []
+
+    var wPos = []
+    var wNeg = []
+
     console.log(m)
 
 
@@ -38,22 +45,30 @@ function Quadratura(){
             
         }while(Math.abs(u-u1) > Math.pow(10, -15));
 
-        mi.push(u)
-        mi.push(-u)
-
+        // mi.push(u)
+        // mi.push(-u)
+        
+        miPos.push(u)
+        miNeg.push(-u)
+        
         var wTemp = 2/((1-Math.pow(u, 2)) * Math.pow(dp, 2))
-        w.push(wTemp);
-        w.push(wTemp);
 
-        // w[i] = (2/((1-Math.pow(u, 2)) * Math.pow(dp, 2)));
-        // w[n-i-1] = w[i]
+        wPos.push(wTemp)
+        wNeg.push(wTemp)
 
+        miPos.sort()
+        miNeg.sort()
+
+        mi = miPos.concat(miNeg)
+
+        w = wPos.concat(wNeg)
+
+        // w.push(wTemp);
+        // w.push(wTemp);
         
     }
     
     generateTable(mi, w);
-    console.log(mi)
-    console.log(w)
 }
 
 function generateTable(mi, w){
