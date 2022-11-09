@@ -69,6 +69,8 @@ function Quadratura(){
     }
     
     generateTable(mi, w);
+
+    return mi, w;
 }
 
 function generateTable(mi, w){
