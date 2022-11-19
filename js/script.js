@@ -4,7 +4,8 @@ document.querySelector('#btn-calcular').addEventListener('click', ()=>{
 
 function Quadratura(){
     document.querySelector('#table-data-body').innerHTML = ''
-    var n = Math.floor(document.querySelector('#ordem').value)
+
+    var n = parseInt(document.querySelector('#ordem').value) // Substituí o Math.floor() por parseInt
 
     if(n % 2 != 0){
         document.getElementById('err-msg').style.display = 'block';
@@ -14,7 +15,7 @@ function Quadratura(){
     }
 
 
-    var m = parseInt((n + 1)/2);
+    var m = (n + 1)/2; // Tirei o parseInt daqui
     var mi;
     var w = []
 
