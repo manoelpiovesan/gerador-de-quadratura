@@ -2,6 +2,53 @@
 //     Quadratura();
 // })
 
+
+var Z, R, ZCN=[], h=[], CC=[], sigmaT = [], sigmaS0 = [], Q=[]
+// ------------------------------------------------------
+document.getElementById('inputfile')
+            .addEventListener('change', function() {
+              
+            var fr=new FileReader();
+            fr.onload=function(){
+                document.getElementById('output')
+                        .textContent=fr.result;
+                        // console.log(fr.result)
+                        processTxtFile(fr.result)
+            }
+            fr.readAsText(this.files[0]);
+        })
+
+
+function processTxtFile(txt){
+
+    var txtLinesArray = txt.split(/\r?\n/)
+    
+
+    Z = txtLinesArray[0]
+    R = txtLinesArray[1]
+
+    ZCN = txtLinesArray[2].split(',') || txtLinesArray[2]
+    h = txtLinesArray[3].split(',') || txtLinesArray[3]
+    CC = txtLinesArray[4].split(',') || txtLinesArray[4]
+    sigmaT = txtLinesArray[5].split(',') || txtLinesArray[5]
+    sigmaS0 = txtLinesArray[6].split(',') || txtLinesArray[6]
+    Q = txtLinesArray[7].split(',') || txtLinesArray[7]
+    
+
+    console.log(Z)
+    console.log(R)
+    console.log(ZCN)
+    console.log(h)
+    console.log(CC)
+    console.log(sigmaT)
+    console.log(sigmaS0)
+    console.log(Q)
+
+}
+
+//-----------------------------
+
+
 document.querySelector('#btn-calcular').addEventListener('click', ()=>{
     diamondDifference();
 })
